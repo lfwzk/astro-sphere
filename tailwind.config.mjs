@@ -1,4 +1,4 @@
-import defaultTheme from "tailwindcss/defaultTheme"
+import defaultTheme from "tailwindcss/defaultTheme";
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        "sans": ["Atkinson", ...defaultTheme.fontFamily.sans],
+        sans: ["Atkinson", ...defaultTheme.fontFamily.sans],
       },
       typography: {
         DEFAULT: {
@@ -15,8 +15,8 @@ export default {
             maxWidth: "full",
           },
         },
-      }
+      },
     },
   },
   plugins: [require("@tailwindcss/typography")],
-}
+};

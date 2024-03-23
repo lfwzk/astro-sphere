@@ -42,6 +42,8 @@ body {
 
 body {
   @apply relative flex flex-col;
+
+
 }
 
 main {
@@ -85,6 +87,27 @@ article {
   }
 }
 
+@keyframes backgroundAnimation {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    /* Move the background image 500px to the right */
+    background-position: 500px 0;
+  }
+}
+
+.animated-background {
+  /* Set the background image */
+  background-image: url('../../public/js-logo.png');
+  /* Set the background size to cover the entire body */
+  background-size: cover;
+  /* Set the animation */
+  animation: backgroundAnimation 5s infinite linear;
+}
+
+
 /** styles for public /animation.js */
 .animate {
   opacity: 0;
@@ -97,9 +120,45 @@ article {
   transform: translateY(0);
 }
 
+
+
 article img {
   padding-top: 20px;
   padding-bottom: 20px;
   display: block;
   margin: 0 auto;
 }
+
+    @keyframes rainAnimation {
+      0% {
+        opacity: 0;
+        transform: translateY(100vh) translateX(calc(100vw * var(--randX1)));
+        /* Empezar desde la parte inferior */
+      }
+  
+      50% {
+        opacity: 1;
+      }
+  
+      100% {
+        opacity: 0.2;
+        transform: translateY(-100vh) translateX(calc(100vw * var(--randX2)));
+        /* Llegar a la parte superior */
+      }
+    }
+  
+    .raindrop {
+      --randX1: calc(0.1 + 0.8 * random());
+      /* Genera un valor aleatorio entre 0.1 y 0.9 */
+      --randX2: calc(0.1 + 0.8 * random());
+      /* Genera un valor aleatorio entre 0.1 y 0.9 */
+      position: absolute;
+      width: 100px;
+      /* Ajusta el tamaño de las imágenes según sea necesario */
+      height: 100px;
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      animation: rainAnimation 40s linear infinite;
+      /* Ajusta la duración de la animación según sea necesario */
+    }
